@@ -82,9 +82,9 @@ log_box = tk.Text(root, height=10, width=50)
 log_box.pack(pady=10)
 
 # log scrollbar
-scrollbar = tk.Scrollbar(root, command=log_box.yview)
-scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-log_box.config(yscrollcommand=scrollbar.set)
+# scrollbar = tk.Scrollbar(root, command=log_box.yview)
+# scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+# log_box.config(yscrollcommand=scrollbar.set)
 
 # run the main event loop
 root.mainloop()
