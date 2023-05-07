@@ -10,11 +10,11 @@ root.title("Lazy Launcher")
 # root.resizable(False, False)
 
 programs = {
-    "Little Nav Map": "C:\\Users\\Val\\OneDrive\\Desktop\\Little Navmap\\LittleNavmap-win64-2.8.10\\littlenavmap.exe",
-    "FlyByWire": "C:\\Users\\Val\\AppData\\Local\\Programs\\fbw-installer\\FlyByWire Installer.exe",
-    "FSUIPC7": "C:\\FSUIPC7\\FSUIPC7.exe",
-    "Landing Rate Monitor": "C:\\Program Files (x86)\\Landing Rate Monitor\\LRM.exe",
-    "SimToolkitPro": "C:\\Users\\Val\\AppData\\Local\\Programs\\simtoolkitpro\\SimToolkitPro.exe"
+    "Program1": "[path]",
+    "Program2": "[path]",
+    "Program3": "[path]",
+    "Program4": "[path]",
+    "Program5": "[path]"
 }
 
 def start_selected_programs():
