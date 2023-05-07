@@ -17,6 +17,7 @@ programs = {
     "Program5": "[path]"
 }
 
+# starts the checked program(s)
 def start_selected_programs():
     log_box.delete(1.0, tk.END)  # clear log box
     for program, path in programs.items():
@@ -29,13 +30,15 @@ def start_selected_programs():
     # uncheck all checkboxes
     for checkbox in checkboxes:
         checkbox.deselect()
-
+        
+# checks if the program is already running
 def is_program_running(path):
     for process in psutil.process_iter(['name']):
         if process.info['name'] == path.split("\\")[-1]:
             return True
     return False
 
+# force quit
 def quit_selected_programs():
     log_box.delete(1.0, tk.END)  # clear log box
     for program, path in programs.items():
@@ -50,7 +53,8 @@ def quit_selected_programs():
     # uncheck all checkboxes
     for checkbox in checkboxes:
         checkbox.deselect()
-
+        
+# checkbox frame
 checkbox_vars = {}
 checkboxes = []
 
@@ -61,28 +65,26 @@ for program in programs:
     checkbox_vars[program] = var
     checkboxes.append(checkbox)
 
-# create the start and quit buttons
+# buttons frame
 button_frame = tk.Frame(root)
+button_frame.pack(pady=10)
 
+# start button
 start_button = tk.Button(button_frame, text="Start", borderwidth=2, relief="groove", bg="green", fg="white", command=start_selected_programs)
 start_button.pack(side="left", padx=5)
 
+# quit button
 quit_button = tk.Button(button_frame, text="Quit", borderwidth=2, relief="groove", bg="red", fg="white", command=quit_selected_programs)
 quit_button.pack(side="left", padx=5)
-
-button_frame.pack(pady=10)
 
 # create the log textbox
 log_box = tk.Text(root, height=10, width=50)
 log_box.pack(pady=10)
 
-# create scrollbar for the log textbox
+# log scrollbar
 scrollbar = tk.Scrollbar(root, command=log_box.yview)
 scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 log_box.config(yscrollcommand=scrollbar.set)
-
-# set focus on the log textbox so that the user can start typing right away
-log_box.focus_set()
 
 # run the main event loop
 root.mainloop()
