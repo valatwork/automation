@@ -19,7 +19,7 @@ programs = {
 
 # starts the checked program(s)
 def start_selected_programs():
-    log_box.delete(1.0, tk.END)  # clear log box
+    # log_box.delete(1.0, tk.END)  # clear log box
     for program, path in programs.items():
         if checkbox_vars[program].get() == 1:
             if is_program_running(path):
@@ -40,7 +40,7 @@ def is_program_running(path):
 
 # force quit
 def quit_selected_programs():
-    log_box.delete(1.0, tk.END)  # clear log box
+    # log_box.delete(1.0, tk.END)  # clear log box
     for program, path in programs.items():
         if is_program_running(path):
             log_box.insert(tk.END, f"[{datetime.datetime.now().strftime('%H:%M')}] Terminating {program}...\n")
