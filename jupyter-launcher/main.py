@@ -31,9 +31,6 @@ def save_config(config: Dict) -> None:
     except IOError as e:
         sg.popup_error(f"Error saving configuration file: {e}")
 
-def get_pinned_folder_labels(config):
-    """Return a list of pinned folder labels for the pinned combo box."""
-    return [item["label"] for item in config["pinned_folders"]]
 
 
 def get_pinned_folder_labels(config: Dict) -> List[str]:
